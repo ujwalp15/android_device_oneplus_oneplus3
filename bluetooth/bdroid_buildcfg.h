@@ -21,7 +21,24 @@
 
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
-#define BTM_DEF_LOCAL_NAME   "OnePlus 3"
+
+#include <cutils/properties.h>
+#include <string.h>
+
+inline const char* BtmGetDefaultName()
+{
+	char product_device[PROPERTY_VALUE_MAX];
+	property_get("ro.product.device", product_device, "");
+
+	if (!strcmp("OnePlus3", product_device))
+		return "Oneplus 3";
+	if (!strcmp("OnePlus3T", product_device))
+		return "Oneplus 3T";
+
+	return "";
+}
+
+#define BTM_DEF_LOCAL_NAME BtmGetDefaultName()
 // Disables read remote device feature
 #define BTA_SKIP_BLE_READ_REMOTE_FEAT FALSE
 #define MAX_ACL_CONNECTIONS    7
