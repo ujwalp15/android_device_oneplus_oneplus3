@@ -38,6 +38,8 @@
 
 #include "property_service.h"
 #include "vendor_init.h"
+#include "log.h"
+#include "util.h"
 
 using android::base::GetProperty;
 using android::base::SetProperty;
