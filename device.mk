@@ -117,13 +117,13 @@ PRODUCT_PACKAGES += \
     audio.primary.msm8996 \
     audio.a2dp.default \
     audio.usb.default \
-	audio.r_submix.default \
+    audio.r_submix.default \
     libaudio-resampler
 
 PRODUCT_PACKAGES +=
-	libqcomvisualizer \
+    libqcomvisualizer \
     libqcomvoiceprocessing \
-	libqcomvoiceprocessingdescriptors \
+    libqcomvoiceprocessingdescriptors \
     libqcompostprocbundle
 
 PRODUCT_PACKAGES += \
@@ -171,8 +171,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     Snap \
     libcamera_shim \
-	camera.device@3.2-impl \
-	android.hardware.camera.provider@2.4-impl
+    camera.device@3.2-impl \
+    android.hardware.camera.provider@2.4-impl
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
@@ -186,15 +186,15 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-	android.hardware.graphics.allocator@2.0-impl \
-	android.hardware.graphics.allocator@2.0-service \
-	android.hardware.graphics.composer@2.1-impl \
-	android.hardware.graphics.mapper@2.0-impl \
-	android.hardware.memtrack@1.0-impl \
-	gralloc.msm8996 \
-	hwcomposer.msm8996 \
-	libgenlock \
-	memtrack.msm8996
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.memtrack@1.0-impl \
+    gralloc.msm8996 \
+    hwcomposer.msm8996 \
+    libgenlock \
+    memtrack.msm8996
 
 # Display calibration
 PRODUCT_PACKAGES += \
@@ -217,11 +217,11 @@ PRODUCT_PACKAGES += \
 
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
-	android.hardware.gatekeeper@1.0-impl
+    android.hardware.gatekeeper@1.0-impl
 
 # GNSS HAL
 PRODUCT_PACKAGES += \
-	android.hardware.gnss@1.0-impl
+    android.hardware.gnss@1.0-impl
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -266,7 +266,7 @@ PRODUCT_PACKAGES += \
 # Lights
 PRODUCT_PACKAGES += \
     lights.msm8996 \
-	android.hardware.light@2.0-impl
+    android.hardware.light@2.0-impl
 
 # LiveDisplay native
 PRODUCT_PACKAGES += \
@@ -287,9 +287,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     nfc_nci.msm8996 \
-	NfcNci \
+    NfcNci \
     Tag \
-	android.hardware.nfc@1.0-impl
+    android.hardware.nfc@1.0-impl
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
@@ -310,7 +310,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-	android.hardware.power@1.0-impl \
+    android.hardware.power@1.0-impl \
     power.msm8996
 
 PRODUCT_COPY_FILES += \
@@ -319,7 +319,7 @@ PRODUCT_COPY_FILES += \
 # QMI
 PRODUCT_PACKAGES += \
     libjson \
-	libtinyxml
+    libtinyxml
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -349,7 +349,7 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-	android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-impl \
     sensors.msm8996
 
 # Thermal
@@ -385,7 +385,7 @@ PRODUCT_PACKAGES += \
     IPACM_cfg.xml \
     libwpa_client \
     wificond \
-	wifilogd \
+    wifilogd \
     hostapd \
     dhcpcd.conf \
     wpa_supplicant \
