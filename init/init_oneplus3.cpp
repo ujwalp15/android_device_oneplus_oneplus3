@@ -120,7 +120,7 @@ void load_op3t(const char *model) {
 }
 
 void vendor_load_properties() {
-    int rf_version = stoi(GetProperty("ro.boot.rf_version"));
+    int rf_version = stoi(GetProperty("ro.boot.rf_version", ""));
 
     switch (rf_version) {
     case 11:
