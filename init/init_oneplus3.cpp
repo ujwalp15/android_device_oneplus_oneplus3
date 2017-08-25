@@ -98,7 +98,7 @@ void init_alarm_boot_properties()
      * 7 -> CBLPWR_N pin toggled (for external power supply)
      * 8 -> KPDPWR_N pin toggled (power key pressed)
      */
-        SetProperty("ro.alarm_boot", boot_reason == 3 ? "true" : "false");
+        SetProperty("ro.alarm_boot", buf[0] == 3 ? "true" : "false");
     }
 }
 
@@ -156,7 +156,7 @@ void vendor_load_properties() {
         SetProperty("persist.radio.force_on_dc", "true");
         break;
     default:
-        INFO("%s: unexcepted rf version!\n", __func__);
+        LOG(INFO) << "%s: unexcepted rf version!\n", __func__<<;
     }
 
     init_alarm_boot_properties();
