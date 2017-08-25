@@ -156,7 +156,7 @@ void vendor_load_properties() {
         SetProperty("persist.radio.force_on_dc", "true");
         break;
     default:
-        LOG(INFO) << "%s: unexcepted rf version!\n", __func__<<;
+        LOG(INFO) << __func__ << ": unexcepted rf version!\n" << "\n";
     }
 
     init_alarm_boot_properties();
