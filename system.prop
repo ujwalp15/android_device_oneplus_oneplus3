@@ -82,6 +82,9 @@ persist.data.iwlan.enable=true
 # Media
 persist.media.treble_omx=false
 
+# Navigation bar
+qemu.hw.mainkeys=0
+
 # NFC
 ro.nfc.port=I2C
 
