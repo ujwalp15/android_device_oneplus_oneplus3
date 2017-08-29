@@ -183,7 +183,6 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     gralloc.msm8996 \
     hwcomposer.msm8996 \
-    libgenlock \
     memtrack.msm8996
 
 # Display calibration
