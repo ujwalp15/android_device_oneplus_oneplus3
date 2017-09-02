@@ -38,11 +38,6 @@
 
 #include "property_service.h"
 #include "vendor_init.h"
-#include "log.h"
-#include "util.h"
-
-using android::base::GetProperty;
-using android::base::SetProperty;
 
 void property_override(char const prop[], char const value[])
 {
@@ -64,7 +59,7 @@ static int read_file2(const char *fname, char *data, int max_size)
 
     fd = open(fname, O_RDONLY);
     if (fd < 0) {
-        LOG(ERROR) << "failed to open '" << fname << "'\n";
+        ERROR("failed to open '%s'\n", fname);
         return 0;
     }
 
@@ -100,7 +95,10 @@ void init_alarm_boot_properties()
      * 7 -> CBLPWR_N pin toggled (for external power supply)
      * 8 -> KPDPWR_N pin toggled (power key pressed)
      */
-        SetProperty("ro.alarm_boot", buf[0] == 3 ? "true" : "false");
+        if(buf[0] == '3')
+            property_set("ro.alarm_boot", "true");
+        else
+            property_set("ro.alarm_boot", "false");
     }
 }
 
@@ -118,47 +116,47 @@ void load_op3t(const char *model) {
     property_override("ro.product.device", "OnePlus3T");
     property_override("ro.build.description", "OnePlus3-user 7.1.1 NMF26F 69 dev-keys");
     property_override("ro.build.fingerprint", "OnePlus/OnePlus3/OnePlus3T:7.1.1/NMF26F/08101230:user/release-keys");
-    SetProperty("ro.power_profile.override", "power_profile_3t");
+    property_set("ro.power_profile.override", "power_profile_3t");
 }
 
 void vendor_load_properties() {
-    int rf_version = stoi(GetProperty("ro.boot.rf_version", ""));
+    int rf_version = stoi(android::base::GetProperty("ro.boot.rf_version", ""));
 
     switch (rf_version) {
     case 11:
     case 31:
         /* China / North America model */
         load_op3("ONEPLUS A3000");
-        SetProperty("ro.telephony.default_network", "22");
-        SetProperty("telephony.lteOnCdmaDevice", "1");
-        SetProperty("persist.radio.force_on_dc", "true");
+        property_set("ro.telephony.default_network", "22");
+        property_set("telephony.lteOnCdmaDevice", "1");
+        property_set("persist.radio.force_on_dc", "true");
         break;
     case 21:
         /* Europe / Asia model */
         load_op3("ONEPLUS A3003");
-        SetProperty("ro.telephony.default_network", "9");
+        property_set("ro.telephony.default_network", "9");
         break;
     case 12:
         /* China model */
         load_op3t("ONEPLUS A3010");
-        SetProperty("ro.telephony.default_network", "22");
-        SetProperty("telephony.lteOnCdmaDevice", "1");
-        SetProperty("persist.radio.force_on_dc", "true");
+        property_set("ro.telephony.default_network", "22");
+        property_set("telephony.lteOnCdmaDevice", "1");
+        property_set("persist.radio.force_on_dc", "true");
         break;
     case 22:
         /* Europe / Asia model */
         load_op3t("ONEPLUS A3003");
-        SetProperty("ro.telephony.default_network", "9");
+        property_set("ro.telephony.default_network", "9");
         break;
     case 32:
         /* North America model */
         load_op3t("ONEPLUS A3000");
-        SetProperty("ro.telephony.default_network", "22");
-        SetProperty("telephony.lteOnCdmaDevice", "1");
-        SetProperty("persist.radio.force_on_dc", "true");
+        property_set("ro.telephony.default_network", "22");
+        property_set("telephony.lteOnCdmaDevice", "1");
+        property_set("persist.radio.force_on_dc", "true");
         break;
     default:
-        LOG(INFO) << __func__ << ": unexcepted rf version!\n" << "\n";
+        INFO("%s: unexcepted rf version!\n", __func__);
     }
 
     init_alarm_boot_properties();
