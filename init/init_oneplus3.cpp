@@ -59,7 +59,6 @@ static int read_file2(const char *fname, char *data, int max_size)
 
     fd = open(fname, O_RDONLY);
     if (fd < 0) {
-        ERROR("failed to open '%s'\n", fname);
         return 0;
     }
 
@@ -155,9 +154,6 @@ void vendor_load_properties() {
         property_set("telephony.lteOnCdmaDevice", "1");
         property_set("persist.radio.force_on_dc", "true");
         break;
-    default:
-        INFO("%s: unexcepted rf version!\n", __func__);
     }
-
     init_alarm_boot_properties();
 }

@@ -26,6 +26,7 @@ $(call inherit-product, vendor/oneplus/oneplus3/oneplus3-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
+#    $(LOCAL_PATH)/overlay-lineage
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -193,7 +194,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service
+    android.hardware.biometrics.fingerprint@2.0-service
 
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
