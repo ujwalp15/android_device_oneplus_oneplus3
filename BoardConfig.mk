@@ -137,7 +137,7 @@ TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
 
 # Filesystem
-TARGET_FS_CONFIG_GEN := $(VENDOR_PATH)/config.fs
+TARGET_FS_CONFIG_GEN := $(PLATFORM_PATH)/config.fs
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_oneplus3
